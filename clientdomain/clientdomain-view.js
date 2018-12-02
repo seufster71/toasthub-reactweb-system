@@ -2,19 +2,19 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Table from '../../coreView/common/table';
 
-export default function ClientDomainView({clientdomains }) {
+export default function ClientDomainView({clientDomains }) {
 
   let columns = [];
-  if (clientdomains.appLabels != null && clientdomains.appLabels.SYSTEM_CLIENTDOMAIN_TABLE != null) {
-    columns = clientdomains.appLabels.SYSTEM_CLIENTDOMAIN_TABLE;
+  if (clientDomains.appLabels != null && clientDomains.appLabels.SYSTEM_CLIENT_DOMAIN_TABLE != null) {
+    columns = clientDomains.appLabels.SYSTEM_CLIENT_DOMAIN_TABLE;
   }
 
     return (
-      <Table items={clientdomains.items} columns={columns} />
+      <Table items={clientDomains.items} columns={columns} />
     );
 }
 
 
 ClientDomainView.propTypes = {
-  clientdomains: PropTypes.object
+  clientDomains: PropTypes.object
 };
