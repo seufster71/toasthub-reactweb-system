@@ -7,7 +7,7 @@ import Select from '../../coreView/common/select-input';
 import CheckBox from '../../coreView/common/checkBox';
 import Switch from '../../coreView/common/switch';
 
-export default function ApplicationModifyView({containerState, item, inputFields, appPrefs, itemAppForms, onSave, onCancel, inputChange}) {
+export default function ApplicationModifyView({containerState, item, inputFields, appPrefs, itemPrefForms, onSave, onCancel, inputChange}) {
     
 	let adminApplicationFormTitle = {};
 
@@ -27,14 +27,14 @@ export default function ApplicationModifyView({containerState, item, inputFields
     let directionOptions = [];
     
     
-    if (itemAppForms != null && itemAppForms.ADMIN_APPLICATION_FORM != null) {
-    	for (let i = 0; i < itemAppForms.ADMIN_APPLICATION_FORM.length; i++) {
-    		switch (itemAppForms.ADMIN_APPLICATION_FORM[i].name) {
+    if (itemPrefForms != null && itemPrefForms.ADMIN_APPLICATION_FORM != null) {
+    	for (let i = 0; i < itemPrefForms.ADMIN_APPLICATION_FORM.length; i++) {
+    		switch (itemPrefForms.ADMIN_APPLICATION_FORM[i].name) {
     		case "ADMIN_APPLICATION_FORM_TITLE":
-    			adminApplicationFormTitle = itemAppForms.ADMIN_APPLICATION_FORM[i];
+    			adminApplicationFormTitle = itemPrefForms.ADMIN_APPLICATION_FORM[i];
     			break;
     		case "ADMIN_APPLICATION_FORM_CODE":
-    			adminApplicationFormCode = itemAppForms.ADMIN_APPLICATION_FORM[i];
+    			adminApplicationFormCode = itemPrefForms.ADMIN_APPLICATION_FORM[i];
     			if (adminApplicationFormCode.classModel != "") {
     				let codeModel = JSON.parse(adminApplicationFormCode.classModel);
     				if (item != null && item[codeModel.field] != null) {
@@ -43,7 +43,7 @@ export default function ApplicationModifyView({containerState, item, inputFields
     			}
     			break;
     		case "ADMIN_APPLICATION_FORM_ACTIVE":
-    			adminApplicationFormActive = itemAppForms.ADMIN_APPLICATION_FORM[i];
+    			adminApplicationFormActive = itemPrefForms.ADMIN_APPLICATION_FORM[i];
     			if (adminApplicationFormActive.classModel != "") {
     				let activeModel = JSON.parse(adminApplicationFormActive.classModel);
     				if (item != null && item[activeModel.field] != null) {
@@ -53,7 +53,7 @@ export default function ApplicationModifyView({containerState, item, inputFields
     			}
     			break;
     		case "ADMIN_APPLICATION_FORM_DEFAULT":
-    			adminApplicationFormDefault = itemAppForms.ADMIN_APPLICATION_FORM[i];
+    			adminApplicationFormDefault = itemPrefForms.ADMIN_APPLICATION_FORM[i];
     			if (adminApplicationFormDefault.classModel != "") {
     				let defaultModel = JSON.parse(adminApplicationFormDefault.classModel);
     				if (item != null && item[defaultModel.field] != null) {
@@ -63,7 +63,7 @@ export default function ApplicationModifyView({containerState, item, inputFields
     			}
     			break;
     		case "ADMIN_APPLICATION_FORM_DIRECTION":
-    			adminApplicationFormDirection = itemAppForms.ADMIN_APPLICATION_FORM[i];
+    			adminApplicationFormDirection = itemPrefForms.ADMIN_APPLICATION_FORM[i];
     			if (adminApplicationFormDirection.classModel != "") {
     				let directionModel = JSON.parse(adminApplicationFormDirection.classModel);
     				if (item != null && item[directionModel.field] != null) {
@@ -119,7 +119,7 @@ ApplicationModifyView.propTypes = {
   containerState: PropTypes.object,
   item: PropTypes.object,
   appPrefs: PropTypes.object,
-  itemAppForms: PropTypes.object,
+  itemPrefForms: PropTypes.object,
   onSave: PropTypes.func,
   onCancel: PropTypes.func,
   inputChange: PropTypes.func

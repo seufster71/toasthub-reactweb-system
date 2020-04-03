@@ -10,13 +10,13 @@ export default function ApplicationView({containerState, applications, appPrefs,
 
   let columns = [];
   
-  if (applications.appLabels != null && applications.appLabels.ADMIN_APPLICATION_TABLE != null) {
-	  columns = applications.appLabels.ADMIN_APPLICATION_TABLE;
+  if (applications.prefLabels != null && applications.prefLabels.ADMIN_APPLICATION_TABLE != null) {
+	  columns = applications.prefLabels.ADMIN_APPLICATION_TABLE;
   }
   
   let header = "";
-	if (applications.appTexts.ADMIN_APPLICATION_PAGE != null && applications.appTexts.ADMIN_APPLICATION_PAGE.ADMIN_APPLICATION_PAGE_HEADER != null) {
-		header = applications.appTexts.ADMIN_APPLICATION_PAGE.ADMIN_APPLICATION_PAGE_HEADER;
+	if (applications.prefTexts.ADMIN_APPLICATION_PAGE != null && applications.prefTexts.ADMIN_APPLICATION_PAGE.ADMIN_APPLICATION_PAGE_HEADER != null) {
+		header = applications.prefTexts.ADMIN_APPLICATION_PAGE.ADMIN_APPLICATION_PAGE_HEADER;
 	}
   return (
 	<div>

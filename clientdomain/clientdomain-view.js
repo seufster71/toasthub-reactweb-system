@@ -5,8 +5,8 @@ import Table from '../../coreView/common/table';
 export default function ClientDomainView({clientDomains }) {
 
   let columns = [];
-  if (clientDomains.appLabels != null && clientDomains.appLabels.SYSTEM_CLIENT_DOMAIN_TABLE != null) {
-    columns = clientDomains.appLabels.SYSTEM_CLIENT_DOMAIN_TABLE;
+  if (clientDomains.prefLabels != null && clientDomains.prefLabels.SYSTEM_CLIENT_DOMAIN_TABLE != null) {
+    columns = clientDomains.prefLabels.SYSTEM_CLIENT_DOMAIN_TABLE;
   }
 
     return (
