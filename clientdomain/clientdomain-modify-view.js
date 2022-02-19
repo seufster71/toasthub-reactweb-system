@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormBuilder from '../../coreView/common/form-builder';
 
-export default function ApplicationModifyView({itemState, appPrefs, 
+export default function ClientDomainModifyView({itemState, appPrefs, 
 	onSave, onCancel, inputChange, onBlur}) {
     
-	let formName = "SYSTEM_APPLICATION_FORM";
-	let formTitle = "Application";
+	let formName = "SYSTEM_CLIENT_DOMAIN_FORM";
+	let formTitle = "Client Domain";
 	let formGroup = "FORM1";
     
     return (
@@ -16,8 +16,8 @@ export default function ApplicationModifyView({itemState, appPrefs,
 }
 
 
-ApplicationModifyView.propTypes = {
- 	itemState: PropTypes.object.isRequired,
+ClientDomainModifyView.propTypes = {
+	itemState: PropTypes.object.isRequired,
 	appPrefs: PropTypes.object.isRequired,
 	onSave: PropTypes.func,
 	onCancel: PropTypes.func,

@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Table from '../../coreView/common/table';
+import ListBuilder from '../../coreView/common/list-builder';
 import Modal from '../../coreView/common/modal';
 
-export default function ApplicationView({itemState, appPrefs, onListLimitChange,
+export default function ServicesView({itemState, appPrefs, onListLimitChange,
 	onSearchChange, onSearchClick, onPaginationClick, onOrderBy, onOption, 
-	closeModal, session }) {
+	closeModal, session}) {
 
-	let columns = [];
-  
-	if (itemState.prefLabels != null && itemState.prefLabels.SYSTEM_APPLICATION_PAGE != null) {
-		columns = itemState.prefLabels.SYSTEM_APPLICATION_PAGE;
-	}
+  	let columns = [];
+  	if (itemState.prefLabels != null && itemState.prefLabels.SYSTEM_SERVICES_PAGE != null) {
+    	columns = itemState.prefLabels.SYSTEM_SERVICES_PAGE;
+  	}
 	let group = "TABLE1";
-  
-	let header = "";
-	if (itemState.prefTexts.SYSTEM_APPLICATION_PAGE != null && itemState.prefTexts.SYSTEM_APPLICATION_PAGE.SYSTEM_APPLICATION_PAGE_HEADER != null) {
-		header = itemState.prefTexts.SYSTEM_APPLICATION_PAGE.SYSTEM_APPLICATION_PAGE_HEADER.value;
+    
+    let header = "";
+	if (itemState.prefTexts.SYSTEM_SERVICES_PAGE != null && itemState.prefTexts.SYSTEM_SERVICES_PAGE.SYSTEM_SERVICES_PAGE_HEADER != null) {
+		header = itemState.prefTexts.SYSTEM_SERVICES_PAGE.SYSTEM_SERVICES_PAGE_HEADER.value;
 	}
 	
 	let deleteModalHeader = "Delete ";
@@ -27,7 +27,7 @@ export default function ApplicationView({itemState, appPrefs, onListLimitChange,
 	let viewPortSmall = false;
 	if (session.viewPort === 'small') { viewPortSmall = true }
 	
-	return (
+    return (
     	<div>
     		{viewPortSmall ? (
     			<ListBuilder
@@ -79,8 +79,8 @@ export default function ApplicationView({itemState, appPrefs, onListLimitChange,
 }
 
 
-ApplicationView.propTypes = {
-	itemState: PropTypes.object.isRequired,
+ServicesView.propTypes = {
+  	itemState: PropTypes.object.isRequired,
 	appPrefs: PropTypes.object,
 	onListLimitChange: PropTypes.func,
 	onSearchChange: PropTypes.func,
